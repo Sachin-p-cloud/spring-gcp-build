@@ -1,5 +1,6 @@
 package com.test.gcp;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +12,12 @@ public class GcpControllerTest {
 
     @GetMapping
     public ResponseEntity<?> testGcpController(){
-        return ResponseEntity.accepted().body("GCP controller is running");
+        return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running");
     }
 
     @GetMapping("/new")
     public ResponseEntity<?> testGcpNewController(){
-        return ResponseEntity.accepted().body("GCP controller 2 is running");
+        return ResponseEntity.status(HttpStatus.OK).body("GCP controller 2 is running");
     }
 
 }
