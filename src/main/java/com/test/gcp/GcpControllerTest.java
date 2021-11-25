@@ -18,4 +18,9 @@ public class GcpControllerTest {
     public ResponseEntity<?> testGcpNewController(){
         return ResponseEntity.accepted().body("GCP controller 2 is running");
     }
+
+    @GetMapping("/new")
+    public ResponseEntity<?> testGcpNewController(){
+        return ResponseEntity.accepted().body("GCP controller 2 is running");
+    }
 }
