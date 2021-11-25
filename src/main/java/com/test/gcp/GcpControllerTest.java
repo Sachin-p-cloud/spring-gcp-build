@@ -12,6 +12,7 @@ public class GcpControllerTest {
 
     @GetMapping
     public ResponseEntity<?> testGcpController(){
+
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running");
     }
 
