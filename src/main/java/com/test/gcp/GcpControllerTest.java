@@ -16,7 +16,7 @@ public class GcpControllerTest {
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running");
     }
 
-    @GetMapping("/new")
+    @GetMapping("/CiCd")
     public ResponseEntity<?> testGcpNewController(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller 2 is running");
     }
