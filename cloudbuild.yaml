@@ -1,17 +1,20 @@
 steps:
+#   Maven test run
   - name: maven:3-jdk-8
     entrypoint: mvn
     args: ["test"]
+#   Maven packaging and build
   - name: maven:3-jdk-8
     entrypoint: mvn
     args: ["package", "-Dmaven.test.skip=true"]
+#   Build Docker image
   - name: gcr.io/cloud-builders/docker
     args: ["build", "-t", "gcr.io/$PROJECT_ID/spring-gcp-test:$COMMIT_SHA", "--build-arg=JAR_FILE=target/gcp-0.0.1-SNAPSHOT.jar", "."]
-#  # Push the container image to Container Registry
-  - name: 'gcr.io/cloud-builders/docker'
+#  Push the container image to Container Registry
+  - name: gcr.io/cloud-builders/docker
     args: [ 'push', 'gcr.io/$PROJECT_ID/spring-gcp-test:$COMMIT_SHA' ]
-#  # Deploy container image to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#  Deploy container image to Cloud Run
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: gcloud
     args:
       - 'run'
@@ -21,4 +24,4 @@ steps:
       - 'gcr.io/$PROJECT_ID/spring-gcp-test:$COMMIT_SHA'
       - '--region'
       - 'us-central1'
-images: ["gcr.io/$PROJECT_ID/spring-gcp-test"]
+images: ["gcr.io/$PROJECT_ID/spring-gcp-test:$COMMIT_SHA"]
