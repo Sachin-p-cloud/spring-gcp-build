@@ -30,6 +30,12 @@ public class GcpControllerTest {
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running after dev");
     }
 
+    @GetMapping("/demo")
+    public ResponseEntity<?> testGcpNewController5(){
+        return ResponseEntity.status(HttpStatus.OK).body("GCP controller is in Demo");
+    }
+
+
     @GetMapping("/devTestDemo")
     public ResponseEntity<?> testGcpNewController6(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is dev demo");
