@@ -25,4 +25,9 @@ public class GcpControllerTest {
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller 2 is running");
     }
 
+    @GetMapping("/devTest")
+    public ResponseEntity<?> testGcpNewController4(){
+        return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running after dev");
+    }
+
 }
