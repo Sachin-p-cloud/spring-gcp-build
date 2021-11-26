@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/gcp/test")
+@RequestMapping
 public class GcpControllerTest {
 
-    @GetMapping
+    @GetMapping("")
     public ResponseEntity<?> testGcpController(){
+        return ResponseEntity.status(HttpStatus.OK).body("GCP controller is up");
+    }
+
+    @GetMapping("/gcp/test")
+    public ResponseEntity<?> testGcpController3(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running");
     }
 
