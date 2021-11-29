@@ -34,7 +34,7 @@ class GcpApplicationTests {
 				.accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
 		int status = mvcResult.getResponse().getStatus();
-		assertEquals(200, status);
+		assertEquals(202, status);
 	}
 
 
