@@ -13,6 +13,12 @@ steps:
 #   Push the container image to Container Registry
   - name: gcr.io/cloud-builders/docker
     args: [ 'push', 'gcr.io/$PROJECT_ID/spring-gcp-test:$COMMIT_SHA' ]
+  - name: gcr.io/$PROJECT_ID/sonar-scanner:latest
+    id: SonarCloud Build
+    args:
+      - '-Dsonar.host.url=https://sonarcloud.io'
+      - '-Dsonar.projectKey=Sachin-p-cloud_spring-gcp-build'
+      - '-Dsonar.sources=.'
 #   Deploy container image to Cloud Run
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: gcloud
