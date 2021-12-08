@@ -11,33 +11,33 @@ import org.springframework.web.bind.annotation.RestController;
 public class GcpControllerTest {
 
     @GetMapping("")
-    public ResponseEntity<?> testGcpController(){
+    public ResponseEntity<Object> testGcpController(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is up");
     }
 
     @GetMapping("/gcp/test")
-    public ResponseEntity<?> testGcpController3(){
+    public ResponseEntity<Object> testGcpController3(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running");
     }
 
     @GetMapping("/CiCd")
-    public ResponseEntity<?> testGcpNewController(){
+    public ResponseEntity<Object> testGcpNewController(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller 2 is running");
     }
 
     @GetMapping("/devTest")
-    public ResponseEntity<?> testGcpNewController4(){
+    public ResponseEntity<Object> testGcpNewController4(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is running after dev");
     }
 
     @GetMapping("/demo")
-    public ResponseEntity<?> testGcpNewController5(){
+    public ResponseEntity<Object> testGcpNewController5(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is in Demo");
     }
 
 
     @GetMapping("/devTestDemo")
-    public ResponseEntity<?> testGcpNewController6(){
+    public ResponseEntity<Object> testGcpNewController6(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is dev demo");
     }
 
