@@ -28,7 +28,7 @@ class GcpApplicationTests {
 	}
 
 	@Test
-	public void checkGcpController() throws Exception {
+	void checkGcpController() throws Exception {
 		String uri = "/gcp/test";
 		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
 				.accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
