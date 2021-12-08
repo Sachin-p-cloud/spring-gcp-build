@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GcpControllerTest {
 
     @GetMapping("")
-    public ResponseEntity<Object> testGcpController(){
+    public ResponseEntity<?> testGcpController(){
         return ResponseEntity.status(HttpStatus.OK).body("GCP controller is up");
     }
 
